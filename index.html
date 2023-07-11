@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="script.js" defer></script>
     <title>Sign-Up</title>
 </head>
 <body>
@@ -22,20 +23,22 @@
                 </span>
                 <span class="letsgo">LET'S DO THIS!</span>
                 <div class="mainRight">
-                    
+                    <form>
                         <div class="leftInRight">
-                        <label for="firstName">First Name<input placeholder="Ryan"type="text"></label>
-                        <label for="lastName">Last Name<input placeholder="Giggs" type="text"></label>
-                        <label for="email">Email<input placeholder="ryangiggs@example.com" type="email"></label>
+                        <label for="firstName">First Name<input maxlength="30" placeholder="Ryan"type="text" required></label>
+                        <label for="lastName">Last Name<input maxlength="30" placeholder="Giggs" type="text" required></label>
+                        <label for="email">Email<input maxlength="30" placeholder="ryangiggs@example.com" type="email" required></label>
                         </div>
                         <div class="rightInRight">
-                        <label for="phoneNumber">Phone Number<input placeholder="123456789" type="text"></label>
-                        <label for="password">Password<input placeholder="Make your password strong!" type="password"></label>
-                        <label for="confirmPassword">Confirm Password<input placeholder="Repeat your password" type="password"></label>
+                        <label for="phoneNumber">Phone Number<input placeholder="123-456-789" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required></label>
+                        <label for="password">Password<input id="passwordOne" placeholder="Make your password strong!" type="password" required></label>
+                        <label for="confirmPassword">Confirm Password<input id="passwordTwo" placeholder="Repeat your password" type="password" required></label>
+                        <p id="passwordError" style="margin-left: 10px; color: red; display: none;">Passwords do not match</p>
                     </div>
                     
                 </div>
-                <button type="submit">CREATE ACCOUNT</button>
+                <button id="submitButton" type="submit">CREATE ACCOUNT</button>
+            </form>
             <span class="haveacc">Already have an account?</span><br><a href="">Log in</a></span>
                 
             </div>
